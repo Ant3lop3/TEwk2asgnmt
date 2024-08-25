@@ -33,6 +33,7 @@ h1 {
 .grid-wrapper audio {
     display: grid;
     width: 0px;
+    visibility: hidden;
     z-index: -1;
 }
 
