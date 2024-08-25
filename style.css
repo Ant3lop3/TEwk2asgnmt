@@ -31,10 +31,7 @@ h1 {
 }
 
 .grid-wrapper audio {
-    display: grid;
-    width: 0px;
-    visibility: hidden;
-    z-index: -1;
+    display: none;
 }
 
 /* below is the CONTAINER for the buttons, NOT THE BUTTONS THEMSELVES -they're INSIDE the container, see below */
