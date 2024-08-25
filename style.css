@@ -1,0 +1,123 @@
+* {
+    margin: 0px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    background-color: #1c1c1c;
+}
+
+.grid-wrapper { 
+    height: 100svh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    z-index: 1;
+}
+/* below is the same method as the showPhoto img element further down */
+.grid-wrapper h1 {
+    display: grid;
+    grid-column: 5 / 7; /* centres h1 title in the middle, resting on the 6th column line */
+    justify-self: center;
+    z-index: 4;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(185, 185, 185);
+    font-size: 40px;
+}
+
+.grid-wrapper audio {
+    display: grid;
+    width: 0px;
+    z-index: -1;
+}
+
+/* below is the CONTAINER for the buttons, NOT THE BUTTONS THEMSELVES -they're INSIDE the container, see below */
+.grid-wrapper .buttons {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3 / 4;
+    z-index: 1;
+    width: 70px;
+}
+
+/* below targets the actual buttons themselves, whilst '.grid-wrapper .buttons' only targets the cont that the buttons are in!  */
+.grid-wrapper .buttons button {
+    background-color: rgb(133, 133, 133);
+    color: whitesmoke;
+}
+
+.grid-wrapper .buttons button:hover {
+    background-color: whitesmoke;
+    color: black;
+    cursor: pointer;
+}
+
+/* below targets the specific play button */
+.grid-wrapper .buttons #playBtn {
+    animation: colorChange 4s infinite;
+}
+/* below- define the type of keyframes animation you want, then reference where you want it (like above) */
+@keyframes colorChange {
+    0% { background-color: initial; }
+    50% { background-color: rgb(150, 4, 48); }
+    100% { background-color: initial; }
+}
+
+
+#thumbnailCont {
+    display: flex;
+    justify-content: space-evenly; 
+    width: 100%;
+    padding: 3px;
+    grid-column: 4 / 8;
+    grid-row: 9 / 10;
+    overflow-x: scroll; /* Scolling: this is all the css you need for a basic horizontal scroll gallery. Amazeballs I know */
+    overflow-y: hidden; /* Scolling: and this */
+    white-space: nowrap; /* Scolling: and this */
+    scroll-behavior: smooth; /* Scolling: optional. */
+    cursor: pointer;
+}
+
+/* img as referenced in the creation of both thumbnail & showPhoto elements */
+/*! inorder to have the size of the img shrink/enlarge on auto, I have implemented the following: */
+img {
+    height: auto;
+    width: auto;
+    max-height: 10vh;   /* this means the imgs won't enlarge any bigger than this  */
+    min-width: 80px;    /* this means the imgs won't shrink any smaller than this  */
+    object-fit: cover;
+    padding: 3px;
+    }
+
+/* below enables a highlighted border to ONLY appear when the element is tabbed on (see JS script tabindex attribute for
+the actual workings of it in this JS scripted element */
+img:focus-visible {
+    outline: 3px solid whitesmoke;
+}
+
+/* below separates the large #showPhotos properties from the img properties, allowing bigger sizes- */
+#showPhotos img {
+    max-width: 100%;
+    max-height: 100%;  /* Adjust this value as needed */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+#showPhotos {
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row: 2 / 9;  /* Adjust this as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+

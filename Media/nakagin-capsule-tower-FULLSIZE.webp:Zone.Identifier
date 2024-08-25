@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://eu-central.storage.cloudconvert.com/tasks/354f476d-2a85-4e20-ad26-a3ca08b9a8c1/nakagin-capsule-tower.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20240823%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20240823T135008Z&X-Amz-Expires=86400&X-Amz-Signature=f31ef97bdf6408c348d23a6b3be16b9abd592a09477aa19f2980adf1a4a7de61&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22nakagin-capsule-tower.webp%22&response-content-type=image%2Fwebp&x-id=GetObject
