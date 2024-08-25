@@ -60,6 +60,15 @@ let photoAlbum = [
 const thumbnailCont = document.getElementById('thumbnailCont')
 const showPhotos = document.getElementById('showPhotos')
 
+//! Step 7: having an image displayed on initial load:
+//7a: first I created the variable containing the image i wanted to see on load (I just choose an existing one from the album)
+const onloadImage = {url:'Media/Kaluga-Russia.webp', alt:'This outdoor photo is of a campus of somekind in Kaluga, Russia' }
+//7b: using the 'window.onload' event and calling on the already made 'makeLargePhoto' func (see step 6), all i had to do was
+// reference the 'onloadImage' variable as made above-
+window.onload = function() {
+    makeLargePhoto(onloadImage);
+}
+
 //! Step 5: (in this case) Create a function for the thumbnail to make it interactive-
 function makeThumbnails() {
     photoAlbum.forEach(function(photo){   //5a: forEach will (auto loop) through each photo within the photoAlbum array
@@ -109,19 +118,17 @@ function makeLargePhoto(bigPhoto) {
     
 }
 
+//! making the audio buttons interactive:
 playBtn.addEventListener('click', function() {
     synth.play()
-    
-})
-
+    })
 pauseBtn.addEventListener('click', function() {
     synth.pause()
 })
-
 stopBtn.addEventListener('click', function() {
     // pause the playback
     synth.pause()
-    // set time to 0
+    // reset time to 0
     synth.currentTime = 0
 })
 

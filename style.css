@@ -29,7 +29,7 @@ h1 {
     color: rgb(185, 185, 185);
     font-size: 40px;
 }
-
+/* display set to none: makes sure it doesn't appear at all regardless of device viewing site */
 .grid-wrapper audio {
     display: none;
 }
